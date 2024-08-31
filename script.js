@@ -42,3 +42,25 @@ function playRound(humanChoice, computerChoice) {
         computerScore++;
     }
 }
+
+function playGame() {
+    let roundTotal = 0;
+
+    while (roundTotal < 5) {
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+        console.log(`Human score: ${humanScore} Computer score: ${computerScore}`);
+        roundTotal++;
+    }
+
+    if (humanScore > computerScore) {
+        console.log("YOU WIN!");
+    } else if (humanScore < computerScore) {
+        console.log("YOU LOSE!");
+    } else {
+        console.log("DRAW!");
+    }
+}
+
+playGame();
