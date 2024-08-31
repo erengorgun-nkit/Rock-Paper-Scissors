@@ -21,3 +21,24 @@ function getHumanChoice() {
     let choice = prompt("Rock, paper, or scissors?");
     return choice.toLowerCase();
 }
+
+function playRound(humanChoice, computerChoice) {
+    console.log(`You play ${humanChoice}.`);
+
+    if (humanChoice === computerChoice) {
+        console.log(`Computer plays ${computerChoice}.`);
+        console.log("It's a draw!");
+    } else if (
+        (humanChoice === "rock" && computerChoice === "scissors") ||
+        (humanChoice === "paper" && computerChoice === "rock") ||
+        (humanChoice === "scissors" && computerChoice === "paper")
+    ) {
+        console.log(`Computer plays ${computerChoice}.`);
+        console.log("You win the round!");
+        humanScore++;
+    } else {
+        console.log(`Computer plays ${computerChoice}.`);
+        console.log("Computer wins the round!");
+        computerScore++;
+    }
+}
